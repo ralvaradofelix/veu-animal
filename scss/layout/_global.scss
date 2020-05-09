@@ -1,0 +1,134 @@
+@import 'header';
+@import 'main';
+@import 'footer';
+
+// body {
+//   max-width: 80rem;
+//   margin: 0 auto;
+//   grid-gap: 1.5rem;
+// }
+
+.grid_container {
+	display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1.5rem;
+  grid-gap: 1.5rem;
+  @media (max-width: $query__medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $query__xsmall) {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem;
+    grid-gap: 4rem;
+  }
+}
+
+.page {
+  --page-header_width: 20rem;
+  display: grid;
+  grid-template-columns: var(--page-header_width) 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  'aside main'
+  'aside footer';
+  @media (max-width: $query__medium) {
+    --page-header_width: 15rem;
+  }
+  @media (max-width: $query__small) {
+    display: block;
+  }
+  &.page_home {
+    --page-header_width: 30rem;
+    @media (max-width: $query__medium) {
+      --page-header_width: 20rem;
+    }
+  }
+  &.page_detall {
+    --page-header_width: 15rem;
+    --informacion-width: 28.5vw;
+    @media (max-width: $query__small) {
+      --informacion-width: auto
+    }
+  }
+}
+
+
+
+
+
+.page-header {
+  grid-area: aside;
+}
+
+.main {
+  grid-area: main;
+}
+
+.page-footer {
+  grid-area: footer;
+}
+
+
+.columns {
+  display: flex;
+  margin-bottom: 1rem;
+  &--two {
+    > * {
+      flex: 1 5;
+      margin-bottom: 0 !important;
+      &:first-child {
+         margin-right: 1rem;
+         @media (max-width: $query__small) {
+          margin-bottom: 1rem !important;
+         }         
+      }
+    }
+  }
+  &--three {
+    .feature {
+      margin-right: 1.5rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  @media (max-width: $query__small) {
+    flex-direction: column;
+    .feature {
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
+.transition-fade {
+  transition: .2s;
+  transition-delay: 200ms;
+  opacity: 1;
+}
+html.is-animating .transition-fade{
+  opacity: 0;
+}
+
+.transition-move {
+  transition: .2s;
+  opacity: 1;
+  transform: translateY(0);
+}
+html.is-animating .transition-move {
+  opacity: 0;
+  transform: translateY(-.5rem);
+}
+
+.delighter {
+  transition: all .3s ease-out;
+  transform: translateY(1rem);
+  opacity: 0;
+}
+.delighter.started {
+  transform: none;
+  opacity: 1;
+}
+
+.delighter.started.ended {}

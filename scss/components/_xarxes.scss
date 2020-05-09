@@ -1,0 +1,49 @@
+.xarxes {
+	& .xarxa {
+		font-size: 1.5rem;
+		color: white;
+	}
+	a:not(:last-child) {
+		margin-right: 1rem;
+	}
+}
+
+.compartir {
+	display: flex;
+	justify-content: space-between;
+}
+
+.compartir__item {
+	text-align: center;
+	width: 31.4%;
+}
+
+.compartir__item:hover {
+	text-decoration: none;
+}
+
+.compartir__item .fa {
+	display: block;
+	padding: 1rem;
+	color: white;
+}
+
+.compartir__item .fa-facebook {
+	background-color: #3b5998;
+}
+
+.compartir__item .fa-twitter {
+	background-color:  #1dcaff;
+}
+
+.compartir__item .fa-google-plus {
+	background-color: #d34836;
+}
+
+.compartir__item .fa-whatsapp {
+	background-color: #25D366;
+}
+
+.compartir__item .fa-telegram {
+	background-color: #1d98dc;
+}

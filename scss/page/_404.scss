@@ -1,0 +1,36 @@
+.page_error404 {
+	.card__header {
+		color: white;
+	}
+	.card__content {
+		padding: 4rem 1rem;
+		background-color: white;
+		@media (max-width: $query__medium) {
+			padding-top: 1rem;
+			padding-bottom: 20rem;
+		}
+		h2 {
+			margin-bottom: 1rem;
+		}
+		img {
+			width: 24%;
+			position: absolute;
+			left: 1rem;
+			bottom: -4rem;
+			z-index: 5;
+			@media (max-width: $query__small) {
+				width: 65%;
+			}
+			@media (max-width: $query__medium) {
+				width: 50%;
+				bottom: -20rem;
+			}
+			@media (max-width: $query__large) {
+				width: 28%;
+			}
+		}
+		.grid_container {
+			position: relative;
+		}
+	}
+}

@@ -1,0 +1,69 @@
+.page-header {
+	position: fixed;
+	width: var(--page-header_width);
+	height: 100vh;
+	z-index: 1;
+	transition: all 200ms cubic-bezier(1, 0, 0.67, 1);
+	@media (max-width: $query__small) {
+		position: fixed;
+		width: 100%;
+		height: auto;
+		z-index: 10;
+	}
+	& &__primary,
+	& &__secondary {
+	 position: relative;
+	 display: flex;
+	 align-items: center;
+	}
+	& &__primary {
+		background-color: white;
+		z-index: 5;
+		@media (max-width: $query__small) {
+			border-top-right-radius: $border__radius;
+		}
+	}
+	& &__secondary {
+		position: relative;
+		padding: .5rem;
+		justify-content: flex-end;
+		z-index: 4;
+	}
+	.button--menu,
+	.button--goBack {
+		position: absolute;
+		top: .6rem;
+		z-index: 1;
+	}
+	.button--menu {
+		right: 0;
+	}
+	.button--goBack {
+		left: 0;
+	}
+	& &__menu {
+		z-index: 3;
+	  width: 100%;
+		color: white;
+		background-color: $color__orange;
+		border-bottom: .2rem solid $color__orange;
+		overflow: hidden;
+	}
+}
+
+.button--menu {
+  display: none !important;
+   background-color: transparent;
+   @media (max-width: $query__small) {
+     display: block !important;
+   }
+}
+
+.button--goBack {
+	@media (min-width: $query__small) {
+		display: none !important;
+	}
+  &.-hide {
+		display: none;
+	}
+}

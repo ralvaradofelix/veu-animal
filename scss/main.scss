@@ -1,0 +1,38 @@
+// Vendor
+// ---------
+@import 'vendor/normalize';
+// @import 'vendor/flexboxgrid-sass/flexbox-grid';
+
+// Settings
+// ---------
+@import 'settings/settings';
+
+// Reset and base files
+// --------------------
+@import 'base/base';
+@import 'base/global';
+@import 'base/fonts';
+@import 'base/typography';
+
+// Layout
+// ------
+@import 'layout/global';
+
+// Objects
+// ----------
+@import 'objects/objects';
+
+// Components
+// ----------
+@import 'components/components';
+
+// Pages
+// -----
+@import 'page/default';
+@import 'page/home';
+@import 'page/404';
+@import 'page/noticias';
+@import 'page/noticia';
+@import 'page/detall';
+@import 'page/clients';
+@import 'page/expositor';

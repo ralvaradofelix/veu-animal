@@ -1,0 +1,50 @@
+.main__price {
+	position: relative;
+	z-index: 4;
+	border-bottom-left-radius: $border__radius;
+	border-bottom-right-radius: $border__radius;
+}
+
+.main__price .price__aprox {
+	margin-bottom: .25rem;
+}
+
+.main__price .price__valor {
+	font-size: 3.5rem;
+	font-weight: bold;
+}
+
+.main__price .price__valor span {
+	font-size: 2rem;
+}
+
+.main__price .08 {
+	float: right;
+}
+
+.main__price .button--action {
+	clear: both;
+	margin-right: 1rem;
+}
+
+.price__alert {
+	display: block;
+	margin-top: -1rem;
+	padding: .5rem;
+	font-size: .8rem;
+	font-weight: bold;
+	background-color: white;
+	animation: alert;
+	animation-duration: 1s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+@keyframes alert {
+	from {
+		color: currentColor;
+	}
+	to {
+		color: red;
+	}
+}

@@ -1,0 +1,100 @@
+.card {
+	border-radius: $border__radius;
+}
+
+.card__media {
+	border-top-left-radius: $border__radius;
+	border-top-right-radius: $border__radius;
+}
+
+.card-panel {
+	border-bottom-left-radius: $border__radius;
+	border-bottom-right-radius: $border__radius;
+}
+
+.page_detall .card-panel {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.image-background {
+	position: fixed;
+	width: 100%;
+	top: 50%;
+	right: 0;
+	bottom: 0;
+	left: 50%;
+	z-index: -3;
+	min-height: 100%;
+	max-width: none !important;
+	transform: translate(-50%, -50%);
+	opacity: .8;
+}
+
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+	min-width: 100%;
+	min-height: 100%;
+  z-index: -99;
+}
+
+.logos-caravanas-wrapper {
+	width: 100%;
+	@media (max-width: $query__small) {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.logos-caravanas {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		img {
+			height: 2.6rem;
+			margin: 2rem 1rem;
+			filter: drop-shadow(0 0rem .3rem rgba(255,255,255,0.4));
+			@media (max-width: $query__small) {
+				margin: 0;
+				height: 1.2rem;
+			}
+		}
+	}
+}
+
+.main__price {
+	position: relative;
+	z-index: 4;
+	border-bottom-left-radius: $border__radius;
+	border-bottom-right-radius: $border__radius;
+}
+
+.main__price .price__aprox {
+	font-size: .8rem;
+	margin-bottom: .25rem;
+}
+
+.main__price .price__valor {
+	font-size: 3.5rem;
+	font-weight: lighter;
+}
+
+.main__price .price__valor span {
+	font-size: 2rem;
+}
+
+.main__price .08 {
+	float: right;
+}
+
+.main__price .button--action {
+	clear: both;
+	margin-right: 1rem;
+	width: calc(100% - 1rem);
+}
+
+#swipebox-prev,
+#swipebox-next,
+#swipebox-close {
+  background-image: url('../images/icons/icons.png');
+ }

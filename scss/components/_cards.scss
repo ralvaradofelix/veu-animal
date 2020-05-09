@@ -1,0 +1,219 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Roboto Condensed', sans-serif;
+	width: 100%;
+	position: relative;
+	background-color: white;
+	p {
+		margin: 0;
+	}
+	&__media {
+		background-color: black;
+		overflow: hidden;
+		padding-top: 75%;
+		// box-shadow: $box-shadow__default;
+		img {
+			filter: saturate(140%);
+		}
+	}
+	&__text {
+		padding: .5rem 0;
+		p {
+			font-size: .9rem;
+			line-height: 1.5;
+		}
+	}
+	&__header,
+	&__price,
+	&__estado,
+	&__meta {
+		// border-right: .05rem solid rgba(0,0,0,.05);
+	}
+	&__header {
+		padding-top: 1rem;
+	}
+	&__estado {
+		font-weight: bold;
+		padding: .4rem 1rem 1rem 0;
+	}
+	&__header {
+		// flex: 1;
+		position: relative;
+		font-size: 1.3rem;
+		font-weight: lighter;
+		z-index: 1;
+		.title-modelo {
+			text-transform: uppercase;
+		}
+	}
+	&__meta {
+		font-size: 1rem;
+	}
+	&__price {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1.2rem;
+		font-weight: lighter;
+		margin-top: .5rem;
+		.price__aprox {
+			display: none;
+			font-size: .8rem;
+			margin-bottom: .2rem;
+		}
+	}
+	&#{&}--destacados {
+		.card__media {
+			padding-top: 0;
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+	}
+	&#{&}--noticia {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.card__media {
+			img {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				max-width: none;
+				height: 100%;
+			}
+		}
+		.card__text {
+			height: 7.25rem;
+		}
+		.card__meta {
+			padding: .5rem 0;
+		}
+	}
+	&#{&}--product {
+		.title-marca {
+			position: absolute;
+			width: 7.5rem;
+			z-index: 2;
+			bottom: .5rem;
+			left: .5rem;
+		}
+	
+	}
+}
+
+.card__estado,
+.main__estado  {
+	&--disponible {
+		color: green;
+	}
+	&--ultimas {
+		color: crimson;
+	}
+	&--prereserva {
+		color: blue;
+	}
+	&--agotadas {
+		color: crimson;
+	}
+	&--proximament {
+		color: crimson;
+	}
+}
+
+.media-info {
+	position: absolute;
+	z-index: 2;
+	right: 0;
+	bottom: 0;
+	padding: .5rem;
+	color: white;
+	background-color: rgba(0, 0, 0, .5);
+	span {
+		font-weight: bold;
+		margin-left: .25rem;
+	}
+}
+
+.title-marca {
+	img {
+		max-height: 1.5em;
+	}
+}
+
+.title-modelo {
+	text-transform: uppercase;
+	font-size: 1.3em;
+	margin-bottom: .2em;
+}
+
+.title-meta {
+	font-size: .8em;
+	font-weight: lighter;
+}
+
+.title-marca,
+.title-modelo,
+.title-meta,
+.price__aprox,
+.price__valor,
+.price__promocion{
+	display: inherit;
+}
+
+.price__promocion {
+	position: absolute;
+	padding: .25em .5em;
+	color: darkblue;
+	background-color: yellow;
+	font-weight: bold;
+	z-index: 2;
+}
+
+
+.card .price__promocion {
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+
+// .price__promocion::before {
+// 		content: '\f005';
+// 		margin-right: .25rem;
+// 		vertical-align: initial;   /* --------- Ojo! -------- */
+// }
+
+.price__valor {
+	font-size: 2em;
+}
+
+.card__price .price__valor span {
+	font-size: 1rem;
+}
+
+.card__price .price__estado {
+	font-size: .9rem;
+}
+
+.meta span {
+	font-size: 1em;
+	margin-right: 1rem;
+	margin-bottom: .5em;
+	white-space: nowrap;
+}
+
+.meta i {
+	display: inline-block;
+	margin-right: .5rem;
+	height: 1em;
+	width: 1.2em;
+	vertical-align: middle;
+	font-size: 1.5em;
+}
+
+.meta img {
+	width: 100%;
+	height: 100%;
+}

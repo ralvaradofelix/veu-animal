@@ -1,0 +1,30 @@
+<svg width="32" height="14" viewBox="0 0 32 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>largo</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1113 -1749)">
+<g id="largo">
+<g id="Line">
+<use xlink:href="#path0_stroke" transform="translate(1116.79 1756.65)" fill="#303030"/>
+</g>
+<g id="Line 2">
+<use xlink:href="#path1_stroke" transform="matrix(-0.725857 0.687846 -0.725857 -0.687846 1142.55 1754.39)" fill="#303030"/>
+</g>
+<g id="Line 3">
+<use xlink:href="#path2_stroke" transform="matrix(-0.734775 0.678311 0.734775 0.678311 1121.59 1751)" fill="#303030"/>
+</g>
+<g id="Line 3">
+<use xlink:href="#path3_stroke" transform="matrix(0.725856 0.687846 -0.725856 0.687846 1136.45 1751)" fill="#303030"/>
+</g>
+<g id="Line 2">
+<use xlink:href="#path4_stroke" transform="matrix(0.734775 0.678311 0.734775 -0.678311 1115 1754.56)" fill="#303030"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M 0 0L 25.0282 0L 25.0282 -2L 0 -2L 0 0Z"/>
+<path id="path1_stroke" d="M 0 0L 9.12572 0L 9.12572 -2L 0 -2L 0 0Z"/>
+<path id="path2_stroke" d="M 0 -1.11022e-16L 7.87975 -1.11022e-16L 7.87975 -2L 0 -2L 0 -1.11022e-16Z"/>
+<path id="path3_stroke" d="M 0 0L 7.38877 0L 7.38877 -2L 0 -2L 0 0Z"/>
+<path id="path4_stroke" d="M 0 -1.11022e-16L 9.73211 -1.11022e-16L 9.73211 -2L 0 -2L 0 -1.11022e-16Z"/>
+</defs>
+</svg>

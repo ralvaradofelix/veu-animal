@@ -1,0 +1,17 @@
+.grid {
+  box-sizing: border-box;
+  padding: 0 1rem;
+  @media (max-width: $query__small) {
+     padding: 0;
+ }
+
+  @include variant(container) {
+    margin: 0 auto;
+    max-width: $container-max-width;
+    width: 100%;
+  }
+
+  @include variant(no-gutters) {
+    padding: 0;
+  }
+}

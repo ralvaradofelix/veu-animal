@@ -1,0 +1,211 @@
+Options All -Indexes
+
+RewriteEngine on
+RewriteBase /
+ErrorDocument 404 /404.php
+
+# RewriteCond %{HTTPS} off
+# RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+
+Rewriterule ^cat/$ ./index.php?lang=cat&getvars=%{QUERY_STRING} [L]
+
+Rewriterule ^productos/$ ./expositor.php?getvars=%{QUERY_STRING} [L]
+Rewriterule ^productos/(.+)/$ ./expositor.php?curl=$1&getvars=%{QUERY_STRING} [L]
+Rewriterule ^producto/(.+)/(.+)$ ./detall.php?cat=$1&curl=$2&getvars=%{QUERY_STRING} [L]
+
+# cat
+
+Rewriterule ^cat/productos/$ ./expositor.php?lang=cat&getvars=%{QUERY_STRING} [L]
+Rewriterule ^cat/productos/(.+)/$ ./expositor.php?curl=$1&lang=cat&getvars=%{QUERY_STRING} [L]
+Rewriterule ^cat/producto/(.+)/(.+)$ ./detall.php?cat=$1&lang=cat&curl=$2&getvars=%{QUERY_STRING} [L]
+
+
+Rewriterule ^noticias/$ ./noticies.php?curl=$1&getvars=%{QUERY_STRING} [L]
+Rewriterule ^cat/noticies/$ ./noticies.php?curl=$1&lang=cat&getvars=%{QUERY_STRING} [L]
+
+Rewriterule ^noticia/(.+)$ ./noticia.php?curl=$1&getvars=%{QUERY_STRING} [L]
+Rewriterule ^cat/noticia/(.+)$ ./noticia.php?curl=$1&lang=cat&getvars=%{QUERY_STRING} [L]
+
+
+Rewriterule ^financiacion/$ ./financiacion.php?getvars=%{QUERY_STRING} [L]
+Rewriterule ^cat/financament/$ ./financiacion.php?lang=cat&getvars=%{QUERY_STRING} [L]
+ 
+
+Rewriterule ^contacto/$ ./contacto.php?getvars=%{QUERY_STRING} [L]
+Rewriterule ^cat/contacte/$ ./contacto.php?lang=cat [L]
+
+Rewriterule ^promos/$ ./promos.php?getvars=%{QUERY_STRING} [L]
+Rewriterule ^cat/promos/$ ./promos.php?lang=cat [L]
+
+
+RewriteRule ^([a-z\-\_]+)$ ./pagina.php?curl=$1&getvars=%{QUERY_STRING} [L]
+RewriteRule ^cat/([a-z\-\_]+)$ ./pagina.php?curl=$1&lang=cat&getvars=%{QUERY_STRING} [L]
+
+
+# REDIRECCIONS
+
+Redirect 301 /esp/ /
+Redirect 301 /es/ /
+Redirect 301 /ca/ /cat/
+Redirect 301 /https://www.cargolcaravanas.com/ /
+Redirect 301 /https://www.cargolcaravanas.com/robots.txt /robots.txt
+
+Redirect 301 /es/aviso-legal  /aviso-legal
+Redirect 301 /cat/aviso-legal  /cat/
+
+Redirect 301 /noticies /cat/noticies/
+Redirect 301 /noticies/ /cat/noticies/
+
+
+Redirect 301 /productos/caravanes/ /productos/caravanas/
+Redirect 301 /es/ocasion /productos/ocasion-white-days/
+Redirect 301 /es/autocaravanas/autocaravanas-nuevas /productos/autocaravanas/
+Redirect 301 /es/caravanas/caravanas-nuevas /productos/caravanas/
+Redirect 301 /es/financiacion /financiacion
+Redirect 301 /es/recambios / 
+Redirect 301 /es/clientes-satisfechos /clientes-satisfechos
+Redirect 301 /es/caravanas/caravanas-de-ocasion /productos/caravanas-ocasion/
+Redirect 301 /ca/caravanes/caravanes-d-ocasio /cat/productos/caravanas-ocasion/
+
+Redirect 301 /es/noticias/2018/03/05/poliester-vs-aluminio /noticias/
+Redirect 301 /es/noticias/2018/02/27/challenger-quartz-274 /noticias/
+Redirect 301 /es/noticias/2018/02/27/la-gran-semana-del-caravaning /noticias/
+Redirect 301 /es/noticias/2018/01/31/challenger-genesis-280-outlet /noticias/
+Redirect 301 /es/noticias/2018/01/31/confianza-reforzada-chasis-ford-seguridad-garantia /noticias/
+Redirect 301 /es/noticias/2017/12/20/ofertas-outlet-fin-de-temporada-2017 /noticias/
+Redirect 301 /es/noticias/2017/11/18/por-solo-399-shy-al-mes /noticias/
+Redirect 301 /es/noticias/2017/10/19/oferta-estrella-dies-wik /noticias/
+Redirect 301 /es/noticias/2017/09/22/tecnologia-i-r-p /noticias/
+Redirect 301 /es/noticias/2017/09/22/novedades-2018 /noticias/
+Redirect 301 /es/noticias/2017/06/23/premio-del-grupo-trigano-a-cargol-caravanas-como-lider-de-ventas-temporada-2017 /noticias/
+Redirect 301 /es/noticias/2017/06/09/nuestro-objetivo-hacer-felices-a-nuestros-clientes /noticias/
+Redirect 301 /es/noticias/2017/04/19/caravanas-de-ocasion /noticias/
+Redirect 301 /es/noticias/2017/04/17/visita-con-cita-previa-asesoramiento-de-caravanas-y-autocaravanas /noticias/
+Redirect 301 /es/noticias/2016/09/22/5-arguments-tecnics-que-marquen-la-diferencia /noticias/
+Redirect 301 /es/noticias/2015/06/20/premio-a-cargol-caravanas-del-grupo-trigano-al-mejor-resultado-en-ventas /noticias/
+Redirect 301 /es/noticias/2015/06/18/premio-de-trigano-al-rendimiento-y-fidelidad /noticias/
+Redirect 301 /es/noticias/2015/06/03/innovador-frigorifico-para-caravana-xl-freeze-de-150-litros /noticias/
+Redirect 301 /es/noticias/2015/03/29/comparativa-de-ford-155cv-a-fiat-150cv /noticias/
+Redirect 301 /autocaravanas-KNAUS /autocaravanas-knaus
+
+# marcas (esp i cat)
+
+Redirect 301 /es/autocaravanas-challenger /autocaravanas-challenger
+Redirect 301 /ca/autocaravanas-challenger /cat/autocaravanas-challenger
+Redirect 301 /es/autocaravanas-rapido /autocaravanas-rapido
+Redirect 301 /ca/autocaravanas-rapido /cat/autocaravanas-rapido
+Redirect 301 /es/caravanas-caravelair /caravanas-caravelair
+Redirect 301 /ca/caravanas-caravelair /cat/caravanas-caravelair
+Redirect 301 /es/caravanas-silver /caravanas-silver
+Redirect 301 /ca/caravanas-silver /cat/caravanas-silver
+
+
+# productos
+
+
+Redirect 301 /es/caravanas/caravanas-nuevas /productos/caravanas/
+
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-genesis-398-cama-isla-de-5-plazas-en-stock /
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-mageo-290 /
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/qua /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-genesis-c256-2017 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-v114max-van-de-4-plazas-en-stock /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/rapido-v55  /producto/autocaravanas-campers/rapido-autocaravanas-v-55-blanca
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-mageo-260 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-genesis-396 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-special-edition-398xlb-m-2018 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-edition-40-aniversary-387-m-2018 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-special-edition-387ga-m-2018 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-mageo-387ga-camas-paralelas-de-5-plazas-en-stock /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/rapido-650ff-2017 /producto/autocaravanas-perfiladas/rapido-autocaravanas-rapido-666-ff 
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/rapido-666-f /producto/autocaravanas-perfiladas/rapido-autocaravanas-rapido-666-ff
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/ra /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/challenger-quartz-284 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-perfiladas/mageo-cruise-edition-391 /productos/autocaravanas/
+
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-integrales/rapido-896-f /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-integrales/challenger-sirius-3098-xlbed /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-integrales/challenger-sirius-2090 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-integrales/rapido-855f-2017-e6 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-integrales/rapido-8096ff-2017-proximamente /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/autocaravanas-nuevas/autocaravanas-integrales/rapido-855f-camas-gemelas-6-99 /productos/autocaravanas/
+
+Redirect 301 /es/productos/autocaravanas/ford-transit-2005-241-000km /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/pilote-aventura-p716-11-2011 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/burstner-ixeo-time-585-del-2011 /productos/autocaravanas/
+Redirect 301 /es/productos/caravanas/sun-roller-jazz-495-lh /productos/caravanas/
+Redirect 301 /es/productos/autocaravanas/rapido-983f-integral-2006 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/hymer-b544cl-2007 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/challenger-288eb-del-2015-26-000km /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/challenger-mageo-290-con-170cv-euro6-14-000km-y-11-meses /productos/autocaravanas/
+Redirect 301 /es/productos/caravanas/knaus-sudwind-500fsk-2006 /productos/caravanas/
+Redirect 301 /es/productos/autocaravanas/challender-capuchina-genesis-43-2006 /productos/autocaravanas/
+Redirect 301 /es/productos/autocaravanas/challenger-sirius-3087-ga /productos/autocaravanas/
+
+
+
+# cat
+
+Redirect 301 /ca/autocaravanes/autocaravanes-noves /cat/productos/autocaravanas/
+Redirect 301 /ca/caravanes/caravanes-noves /cat/productos/caravanas/
+Redirect 301 /ca/ocasio /cat/productos/
+Redirect 301 /ca/ocasio/autocaravanes /cat/productos/autocaravanas/
+Redirect 301 /ca/ocasio/caravanes /cat/productos/caravanas/
+Redirect 301 /ca/financament /cat/financiacion
+Redirect 301 /ca/recanvis /cat/
+Redirect 301 /ca/clients-satisfets /cat/clientes-satisfechos
+
+
+
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-antares-330 /cat/producto/caravanas-nuevas/caravelair-caravanas-antares-330
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-antares-476 /cat/producto/caravanas-nuevas/caravelair-caravanas-antares-476
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-antares-486 /cat/producto/caravanes-noves/caravelair-caravanas-antares-486
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-antares-496 /cat/producto/caravanes-noves/caravelair-caravanas-antares-496
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-style-476-family /cat/producto/caravanes-noves/caravelair-caravanas-antares-style-476
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-antares-486-polivalente-ruta-estancia /cat/producto/caravanes-noves/caravelair-caravanas-antares-style-486
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-style-496 /cat/producto/caravanes-noves/caravelair-caravanas-antares-style-496
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-allegra-450-2017 /cat/productos/caravanas/
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-antares-luxe-376 /cat/producto/caravanes-noves/caravelair-caravanas-antares-376
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-antares-390 /cat/productos/caravanas/
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-antares-style-400 /cat/producto/caravanes-noves/caravelair-caravanas-antares-400
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-style-420-mod-2017 /cat/productos/caravanas/
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-antares-style-440 /cat/productos/caravanas/
+Redirect 301 /ca/productes/caravanes/caravanes-noves/caravelair-artica-445 /cat/producto/caravanes-noves/caravelair-caravanas-artica-445
+
+
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-genesis-280-170cv-km0 /cat/productos/autocaravanas/
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-genesis-398-llit-illa-de-5-places-en-estoc /cat/productos/autocaravanas/
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-mageo-290 /cat/producto/autocaravanas-perfiladas/challenger-autocaravanas-genesis-290-s-edition
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-quartz-274 /cat/producto/autocaravanas-perfiladas/challenger-autocaravanas-quartz-274
+
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-genesis-c256-2017 /cat/producto/autocaravanas-capuchinas/challenger-autocaravanas-genesis-c-256
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-v114max-van-de-4-places-en-estoc /cat/producto/autocaravanas-campers/challenger-autocaravanas-star-v-114-max-blanca
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/rapido-v55 /cat/producto/autocaravanas-campers/rapido-autocaravanas-v-55-gris
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-quartz-170 /cat/productos/autocaravanas/
+
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-mageo-260 /cat/producto/autocaravanas-perfiladas/challenger-autocaravanas-genesis-260
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-genesis-396 /cat/producto/autocaravanas-perfiladas/challenger-autocaravanas-genesis-396
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-special-edition-398xlb-m-2018 /cat/producto/autocaravanas-perfiladas/challenger-autocaravanas-mageo-398-xlb-s-edition-40-anniversary
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-edition-40-aniversary-387-m-2018 /cat/producto/autocaravanas-perfiladas/challenger-autocaravanas-mageo-387-ga-s-edition-40-aniversary
+
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-special-edition-387ga-m-2018 /cat/producto/autocaravanas-perfiladas/challenger-autocaravanas-genesis-387-ga-s-edition
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-mageo-387ga-llits-paral-lels-de-5-places-en-estoc /cat/productos/autocaravanas/
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/rapido-650ff-2017  /cat/productos/autocaravanas/
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/rapido-666-f-m-2018 /cat/producto/autocaravanas-perfiladas/rapido-autocaravanas-rapido-666-ff
+
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/rapido-696-ff-premium-m-18 /cat/autocaravanas-rapido
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/challenger-quartz-284 /cat/autocaravanas-challenger
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-perfilades/mageo-cruise-edition-391 /cat/productos/autocaravanas/
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-integrals/rapido-896-f /cat/autocaravanas-rapido
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-integrals/challenger-sirius-3098-xlbed /cat/productos/autocaravanas/
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-integrals/challenger-sirius-2090 /cat/producto/autocaravanas-integrales/challenger-autocaravanas-sirius-2090
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-integrals/rapido-855f-2017-e6 /cat/autocaravanas-rapido
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-integrals/rapido-8096ff-2017-proximamente /cat/autocaravanas-rapido
+Redirect 301 /ca/productes/autocaravanes/autocaravanes-noves/autocaravanes-integrals/rapido-855f-llits-bessons-6-99 /cat/autocaravanas-rapido
+

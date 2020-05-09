@@ -1,0 +1,154 @@
+.page_home {
+	.page-header {
+		&__tomato,
+		&__black {
+			display: none;
+		}
+	}
+	.main {
+		margin-bottom: 0;	min-height: calc(180vh - 41.6rem);
+		&::before {
+			content: '';
+			position: absolute;
+			top: 4rem;
+			right: 0;
+			left: 0;
+			height: 10rem;
+			background-color: rgba(255, 255, 255, .8);
+			z-index: -1;
+		}
+		& &__logo {
+			margin-bottom: 1rem;
+		}
+	}
+	.image-background {
+		display: none;
+		@media (max-width: $query__large) {
+			display: block;
+		}
+	}
+	.video-background {
+		@media (max-width: $query__large) {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: $query__large) {
+	.page_home .video-background {
+		display: none;
+	}
+}
+
+
+.features {
+	.feature {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		&__image {
+			align-self: center;
+			max-width: 5rem;
+		}
+	}
+}
+
+.testimonis {
+	&__data {
+		padding: 1rem;
+		background-color: darkturquoise;
+		display: inline-block;
+		font-size: .9rem;
+		color: aliceblue;
+	}
+}
+
+.testimoni {
+	max-width: 50rem;
+	margin-top: 2rem;
+	margin-left: 2rem;
+	margin-right: 2rem;
+	margin-bottom: 3rem;
+	padding: 2rem 5vw;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	color: black;
+	padding: 1.5rem;
+	text-align: left;
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 0;
+		height: 0;
+		border: 20px solid transparent;
+		border-right-color: white;
+		border-left: 0;
+		border-top: 0;
+		margin-left: -20px;
+	}
+	&__text,
+	&__nom {
+		margin-bottom: 1rem;
+	}
+	&__nom {
+		color: dodgerblue;
+	}
+	&__image {
+		width: 4rem;
+		height: 4rem;
+		// border-radius: 50%;
+		overflow: hidden;
+		margin-bottom: 1rem;
+		img {
+			position: static;
+			transform: translate(0);
+		}
+	}
+	&__rate {
+		padding: .5rem 0;
+		i {
+			 color: gold;
+		 }
+	}
+}
+
+.hero {
+	&__content-area {
+		position: absolute;
+		bottom: 0;
+		z-index: 1;
+		padding: 1.5rem 3rem;
+		color: white;
+		font-size: 2.8rem;
+		line-height: 1.5;
+		a {
+			display: inline-block;
+			background-color: $color__orange;
+			text-decoration: underline;
+			&:hover {
+				background-color: black;
+			}
+		}
+		@media (max-width: $query__small) {
+			bottom: auto;
+			top: 2rem;
+			font-size: 2.2rem;
+			padding: 1rem;
+		}
+		p {
+			color: white;
+			font-size: 1.6rem;
+		}
+	}
+	video {
+		opacity: .8;
+	}
+}
+
+.text-content__item--features {
+	background-color: whitesmoke;
+}

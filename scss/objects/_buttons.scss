@@ -1,0 +1,181 @@
+.button {
+  display: inline-block;
+  font-family: $font__button;
+  font-size: 1.2rem;
+  padding: 1.2rem;
+  font-weight: bold;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+
+  img {
+  	vertical-align: middle;
+  	margin-left: .25rem;
+  	height: 1rem;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  i {
+     &:only-child {
+        margin-right: 0;
+     }
+    margin-right: .5rem;
+  }
+
+  &_menu {
+    padding: 1em;
+  }
+
+  &_theme {
+
+    &_transparent {
+      border: .2rem solid $color__dark;
+      color: $color__dark;
+    }
+
+    &_black {
+      background-color: $color__dark;
+      color: $color__light;
+      &:hover {
+        color: $color__light;
+      }
+    }
+    &_yellow {
+      padding: 1rem;
+      color: darkblue;
+      background-color: yellow;
+      font-weight: bolder !important;
+      &:hover,
+      &:focus {
+        color: white !important;
+      }
+      &:focus:not(:hover) {
+        color: darkblue !important;
+      }
+    }
+
+  }
+
+  &_state {
+
+    &_inactive {
+      pointer-events: none;
+      opacity: .5;
+    }
+
+  }
+
+}
+
+
+.button--action {
+	display: block;
+	color: white;
+  // background-color: orangered;
+  background-color: $color__orange;
+  padding: 1.5rem !important;
+  border-radius: .15rem;
+}
+
+.button--card-action,
+.button--action {
+  text-align: center;
+  font-size: 1.5rem !important;
+  &:focus {
+    background-color: black !important;
+  }
+}
+
+.button--card-action {
+	float: right;
+}
+
+.button--back {
+	font-size: 1.2rem;
+	padding: 0;
+}
+
+.button--back::before,
+.button--down::after,
+.button--next::after,
+.price__promocion::before {
+	display: inline-block;
+	vertical-align: middle;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 0;
+}
+
+.button--back::before,
+.button--down::after,
+.button--next::after,
+.price__promocion::before,
+.page-breadcrumb a::after {
+	vertical-align: middle;
+}
+
+.button--back::before {
+		content: '\f177';
+		margin-right: .5rem;
+}
+
+.button--down::after {
+		content: '\f175';
+		margin-left: .5rem;
+}
+
+.button--next::after {
+		content: '\f178';
+		margin-left: .5rem;
+}
+
+.hamburger .line {
+  width: 1.5rem;
+  height: 2px;
+  background-color: black;
+  display: block;
+  margin-bottom: 4px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.hamburger .line:nth-child(3) {
+  width: 1.5rem;
+  margin-bottom: 0;
+}
+
+.hamburger.active .line:nth-child(1),
+.hamburger.active .line:nth-child(2) {
+	transition-delay: .2s;
+}
+
+.hamburger.active .line:nth-child(1) {
+  -webkit-transform: translateY(.37em) rotate(-45deg);
+  -ms-transform: translateY(.37em) rotate(-45deg);
+  -o-transform: translateY(.37em) rotate(-45deg);
+  transform: translateY(.37em) rotate(-45deg);
+}
+
+.hamburger.active .line:nth-child(2) {
+	-webkit-transform: translateY(0em) rotate(45deg);
+  -ms-transform: translateY(0em) rotate(45deg);
+  -o-transform: translateY(0em) rotate(45deg);
+  transform: translateY(0em) rotate(45deg);
+}
+
+.hamburger.active .line:nth-child(3) {
+	width: 0;
+}
+
+p + .button {
+  margin-top: 1rem;
+}

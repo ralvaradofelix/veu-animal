@@ -1,0 +1,26 @@
+.breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  color: rgba(0,0,0,.5);
+  background: rgba(245,245,245,.9);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  &__item {
+    margin-right: .5rem;
+    font-weight: lighter;
+    &:not(:last-child)::after {
+      content: '>';
+      margin-left: .5rem;
+      font-weight: bold;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  @media (max-width: $query__small) {
+    position: static;
+    // display: none;
+  }
+}

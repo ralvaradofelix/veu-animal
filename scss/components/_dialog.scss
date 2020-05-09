@@ -1,0 +1,97 @@
+.dialog {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        // transform: translate(-50%, -50%) scale(.8);
+        width: calc(100% - 2rem);
+        max-width: 28rem;
+        z-index: 10;
+        transition: all 200ms ease-in-out;
+        transform: translateY(calc(100%)); 
+        // &::before {
+        //         content: '';
+        //         position: fixed;
+        //         top: 50%;
+        //         left: 50%;
+        //         width: 200vw;
+        //         height: 200vh;
+        //         transform: translate(-50%,-50%);
+        //         background-color: rgba(0,0,0,.6);
+        //         animation: fadeIn;
+        //         animation-duration: 500ms;
+        //         animation-fill-mode: forwards;
+        // }
+        &.is-open {
+          transform: translateY(0);    
+        }
+        &__inner {
+          position: relative;
+        }
+        &-tab {
+          width: var(--page-header_width);
+          // display: flex;
+          // justify-content: flex-end;
+          // position: fixed;
+          // left: 0;
+          // bottom: 3rem;
+          // z-index: 10;
+          text-transform: uppercase;
+          .page_home .main & {
+            position: static;
+            width: 100%;
+            &__trigger {
+              font-size: 2rem;
+              padding: 2rem;
+              width: 100%;
+              margin-right: 0;
+            } 
+          }
+          &__trigger {
+            position: relative;
+            overflow: visible;
+            // &:after {
+            //   content: '';
+            //   position: absolute;
+            //   right: 0;
+            //   bottom: 0;
+            //   width: 0;
+            //   height: 0;
+            //   border: 10px solid transparent;
+            //   border-left-color: black;
+            //   border-right: 0;
+            //   border-top: 0;
+            //   margin-bottom: -10px;
+            // }
+          }
+          @media (min-width: $query__small) {
+            .main & {
+              display: none;
+            }
+          }
+          @media (max-width: $query__small) {
+            position: static;
+            justify-content: flex-start;
+            margin: 1rem;
+            &__trigger {
+              font-size: initial;
+            }
+          }
+        }
+        &__media {
+          img {
+            display: block;
+          }
+        }
+        &__close {
+                background-color: white;
+        }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;;
+  }
+}

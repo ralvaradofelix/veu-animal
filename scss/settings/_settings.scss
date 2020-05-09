@@ -1,0 +1,57 @@
+// Colors
+// -------
+$color__primary: hsl(13, 55%, 49%);
+$color__secondary: hsl(0, 0%, 0%);
+
+$color__dark: hsla(0, 0%, 0%, 1);
+$color__dark-smooth: hsla(0, 0%, 0%, .8);
+$color__light: hsla(0, 0%, 100%, 1);
+$color__orange: hsl(24, 100%, 50%);
+
+$color__page-background: white;
+
+$color__text-main: $color__dark;
+
+$color__link: $color__dark;
+$color__link-hover: $color__primary;
+$color__grey_black: dimgray;
+
+// Border
+// ------
+$border__radius: 0rem;
+
+// Transitions
+// ------------
+$transition__default: all 400ms ease-in-out;
+
+// Box Shadow
+// ------------
+$box-shadow__default: 0 .2em .5em rgba(0, 0, 0, .4);
+
+// Structure
+// ---------
+$size__max-width: 64em;
+
+$query__xsmall: 570px;
+$query__small: 960px;
+$query__medium: 1200px;
+$query__large: 2000px;
+$query__xlarge: 75em;
+
+// Grid breakpoints
+$breakpoints: (
+  xs : 0,
+  sm : 31.5em,
+  md : 48em,
+  lg : 63em,
+  xl : 75em
+) !default;
+
+// Typography
+//------------
+$font__main-heading: 'Roboto Condensed', sans-serif;
+$font__heading: 'Roboto Condensed', sans-serif;
+$font__main: 'Open Sans', sans-serif;
+$font__button: 'Roboto Condensed', sans-serif;
+
+$font__line-height-body: 1;

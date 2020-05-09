@@ -1,0 +1,146 @@
+body {
+  background-color: white;
+}
+.icon_pages {
+  width: 10%;
+  padding-bottom: 4px;
+}
+.icon_and_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.text_page {
+  padding-bottom: 30px;
+}
+/* ----------- */
+/* HEADER */
+li > a {
+  color: black;
+}
+
+.el_menu {
+  padding: 0;
+  border: none;
+  background: none;
+}
+.langs {
+  margin-right: 35px;
+}
+.icon_profile_desktop {
+  margin-right: 30px;
+}
+.m-10 {
+  margin-right: 10px;
+}
+.langs_in_mobile {
+  display: none;
+}
+
+/* END HEADER */
+/* ------------- */
+/* FOOTER */
+
+.page-footer {
+  background-color: #2e5c33;
+  color: white;
+}
+.footer_columns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer_columns > div {
+  padding: 45px;
+}
+
+/* END FOOTER */
+/* ------------ */
+/* Projects page */
+
+.projects_page {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+}
+.projects_child {
+  flex: 1 0 50%;
+  padding-bottom: 30px;
+}
+
+/* End Projects Page */
+/* --------- */
+/* Project Page */
+
+#image_project_page {
+  max-width: 100%;
+  min-width: 50%;
+}
+.project_info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project_info > div {
+  padding: 40px;
+  color: #2e5c33;
+  text-align: start;
+  line-height: 1.1em;
+}
+
+/* End Project Page */
+/* --------- */
+/* Ofertas Page */
+.inscriure_button {
+  background-color: #e1f1e3;
+  border-radius: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+}
+.row_oferta {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 3px solid #2e5c33;
+}
+.container_ofertas {
+  color: #2e5c33;
+  padding-bottom: 30px;
+}
+/* End Ofertas Page */
+
+@media (min-width: 991px) {
+  .navbar-nav > li {
+    margin-left: 15px;
+  }
+}
+@media (max-width: 991px) {
+  .la {
+    display: none;
+  }
+  .nav-link {
+    text-align: center;
+  }
+  .langs_in_mobile {
+    display: block;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .bg-nav-color {
+    background-color: #e1f1e3;
+  }
+  .footer_columns {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer_columns > div {
+    padding: 20px;
+  }
+}
